@@ -134,6 +134,20 @@ echo Name of the Pod: $POD_NAME`
 You can access the Pod through the proxied API, by running:
 
 `curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/`
+
+## Deploy your own app
+
+1. Build the app with your name as $DOCKER_ID:app:v1.0.0
+   
+   `docker build -t iportilla/app:1.0.0 -f ./Dockerfile.amd64  .`
+
+2. Push your app to the repository
+   
+   `docker push iportilla/app:1.0.0`
+
+3. Run your app
+   
+   `docker run -it --rm -p 8080:9080 app`
     
 ## License
 
