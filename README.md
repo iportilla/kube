@@ -49,46 +49,63 @@ Enjoy this topic!
 	`cd ivanp`
 	
 	
-5. Clone Docker repository from github
+5. Clone the **kube** repository from github
 
 	`git clone https://github.com/iportilla/kube.git`
 	
-6. Change directory to the Docker directory
+6. Change directory to the **kube** directory
 
 	`cd kube/`
-7. Test your `docker` installation by running the following command:
+7. Test your `kube` installation by running the following command:
 
-	`docker run hello-world`
+	`minikube status`
 	
 	You will see:
 	
 	```
-	Hello from Docker.
-	This message shows that your installation appears to be working correctly.
-	...
+	minikube
+	type: Control Plane
+	host: Running
+	kubelet: Running
+	apiserver: Running
+	kubeconfig: Configured
 	
 	```
 	
-### Hello World
+### Create a `Deployment`
 
-7. Next, we are going to run a `Busybox` container on our system and get a taste of the `docker run` command. To get started, let's run the following in our terminal:.
+7. Next, we will create a Kubernetes Deployment and Pod using a public image hosted on a container repository (Google.io).
+   See [https://kubernetes.io/docs/tutorials/hello-minikube/](https://kubernetes.io/docs/tutorials/hello-minikube/) for details
+
+   A Kubernetes `Pod` is a group of one or more Containers, tied together for the purposes of administration and networking. The Pod in this tutorial has only one Container. A Kubernetes `Deployment` checks on the health of your Pod and restarts the Pod's Container if it terminates. Deployments are the recommended way to manage the creation and scaling of Pods.
+
+Use the `kubectl create` command to create a **Deployment** that manages a Pod. The Pod runs a Container based on the provided Docker image.
+   
 
 	```
-	docker pull busybox
+	# Run a test container image that includes a webserver
+	kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
 	```
 	You will see:
 	
 	```	
-	Using default tag: latest
-	latest: Pulling from library/busybox
-	...
+	deployment.apps/hello-node created
 	```
 
-	The `pull` command fetches the busybox image from the Docker registry and saves it to your system. You can use the docker images command to see a list of all images on your system.
+	The `kubectl create deployment` command fetches the hello image from the Docker registry and saves it to your system. You can use the `kubectl get services` to see a list of all services running on your system.
 	
-	`docker images`
+	`kubectl get services`
 
-8. Great! Let's now run a Docker container based on this image. Run the following command:
+ 	You will see something like:
+
+  	```
+   	NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)          AGE
+	kubernetes            ClusterIP      10.96.0.1       <none>         443/TCP          20h
+	kubernetes-bootcamp   NodePort       10.97.168.128   <none>         8080:30345/TCP   116m
+	simpleapp             LoadBalancer   10.100.171.6    10.100.171.6   80:31458/TCP     160m
+   	```
+
+9. Great! Let's now run a Docker container based on this image. Run the following command:
 
  `docker run busybox echo "Hello World from busybox`
 
