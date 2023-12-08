@@ -75,22 +75,21 @@ Enjoy this topic!
 ### Create a `Deployment`
 
 7. Next, we will create a Kubernetes Deployment and Pod using a public image hosted on a container repository (Google.io).
+   
    See [https://kubernetes.io/docs/tutorials/hello-minikube/](https://kubernetes.io/docs/tutorials/hello-minikube/) for details
+
 
    A Kubernetes `Pod` is a group of one or more Containers, tied together for the purposes of administration and networking. The Pod in this tutorial has only one Container. A Kubernetes `Deployment` checks on the health of your Pod and restarts the Pod's Container if it terminates. Deployments are the recommended way to manage the creation and scaling of Pods.
 
-Use the `kubectl create` command to create a **Deployment** that manages a Pod. The Pod runs a Container based on the provided Docker image.
-   
+Use the `kubectl create` command to create a **Deployment** that manages a Pod. The Pod runs a Container based on the provided Docker image that includes a web server:
 
-	```
-	# Run a test container image that includes a webserver
-	kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
-	```
-	You will see:
-	
-	```	
+	`kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080`
+ 	
+  
+  	You will see:
+	`
 	deployment.apps/hello-node created
-	```
+	`
 
 	The `kubectl create deployment` command fetches the hello image from the Docker registry and saves it to your system. You can use the `kubectl get services` to see a list of all services running on your system.
 	
