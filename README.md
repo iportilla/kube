@@ -116,6 +116,25 @@ myapp-pod                             1/1     Running   1 (3h33m ago)   4h2m
 nginx-55c8948b99-7tcpf                1/1     Running   0               3h28m
 ```
 
+10. Deploy your first app:
+
+    [https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/)
+
+
+    Run:
+    `kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1`
+
+The API server will automatically create an endpoint for each pod, based on the pod name, that is also accessible through the proxy.
+
+First we need to get the Pod name, and we'll store in the environment variable POD_NAME:
+
+`export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo Name of the Pod: $POD_NAME`
+
+You can access the Pod through the proxied API, by running:
+
+`curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/`
+    
 ## License
 
 This sample code is licensed under the [MIT License](https://opensource.org/licenses/MIT).
