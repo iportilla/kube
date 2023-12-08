@@ -82,7 +82,7 @@ A Kubernetes `Pod` is a group of one or more Containers, tied together for the p
 
 Use the `kubectl create` command to create a **Deployment** that manages a Pod. The Pod runs a Container based on the provided Docker image that includes a web server:
 
-`kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080\`
+`kubectl create deployment hello-node-name --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080`
 
 You will see:
 
