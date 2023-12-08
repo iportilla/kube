@@ -145,9 +145,16 @@ You can access the Pod through the proxied API, by running:
    
    `docker push iportilla/app:1.0.0`
 
-3. Run your app
-   
-   `docker run -it --rm -p 8080:9080 app`
+3. Create the pod and service objects in K8S with:
+
+```
+kubectl apply -f pod.yaml
+kubectl apply -f service.yaml
+```
+
+4. Validate application works:
+
+`kubectl get service`
     
 ## License
 
