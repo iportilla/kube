@@ -1,6 +1,6 @@
-# MySite
+# KUBE
 
-## Docker Demo
+## Kubernetes Demo
 
 
 
@@ -9,13 +9,13 @@
 **Note:** if you build your own site update index.html with your site content.
 
 
-<h1 align="center" style="border-bottom: none;">🔎 Docker 101 </h1>
-<h3 align="center">Docker is an open-source project that automates the deployment of software applications inside containers by providing an additional layer of abstraction and automation of OS-level virtualization on Linux..</h3>
+<h1 align="center" style="border-bottom: none;">🔎 Kubernetes 101 </h1>
+<h3 align="center">Kubernetes is an Open-source container orchestration system for automating software deployment, scaling, and management</h3>
 
 
 ### Flow
 
-In this topic, you'll follow a series of hands-on exercises that demonstrate how to use containers for your applications. You'll start with the basics: creating and running your first Docker containers. By the end of the course, you'll get a brief introduction to running containers in production.
+In this topic, you'll follow a series of hands-on exercises that demonstrate how to use Kubernetes for your applications. You'll start with the basics: creating and running your first Kubernetes cluster, pod and service. By the end of the course, you'll get a brief introduction to running Kubernetes in production.
 
 
 
@@ -35,7 +35,8 @@ Enjoy this topic!
 2. Navigate to class subdirectory
 
 	`cd /home/ubuntu/5720`
-3. Create & navigate to your own directory
+
+4. Create & navigate to your own directory
 
 	`mkdir userName`
 	
@@ -48,14 +49,14 @@ Enjoy this topic!
 	`cd ivanp`
 	
 	
-4. Clone Docker repository from github
+5. Clone Docker repository from github
 
-	`git clone https://github.com/iportilla/mysite.git`
+	`git clone https://github.com/iportilla/kube.git`
 	
-5. Change directory to the Docker directory
+6. Change directory to the Docker directory
 
-	`cd mysite/`
-6. Test your `docker` installation by running the following command:
+	`cd kube/`
+7. Test your `docker` installation by running the following command:
 
 	`docker run hello-world`
 	
