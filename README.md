@@ -157,7 +157,9 @@ You will see:
 
 You can access the Pod through the proxied API, by running:
 
-`curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/`
+`curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME:8080/proxy/`
+
+In order for the new Deployment to be accessible without using the proxy, a Service is required.
 
 ## Deploy your own app
 
