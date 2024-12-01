@@ -190,6 +190,13 @@ kubectl apply -f service.yaml
 
 `kubectl get service`
 
+You will see:
+```
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP      10.96.0.1       <none>        443/TCP        48m
+simpleapp    LoadBalancer   10.105.115.60   <pending>     80:32524/TCP   20s
+```
+
 5. Let's verify that the application we deployed in the previous scenario is running. We'll use the kubectl get command and look for existing Pods:
 
 `kubectl get pods`
