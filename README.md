@@ -171,11 +171,15 @@ You will see:
    
    `docker build -t iportilla/app:1.0.0 -f ./Dockerfile.amd64  .`
 
-2. Push your app to the repository
+2. Login to Docker & Push your app to the repository:
+
+   `docker login`
+
+   Enter your userid and password.
    
    `docker push iportilla/app:1.0.0`
 
-3. Create the pod and service objects in K8S with:
+4. Create the pod and service objects in K8S with:
 
 ```
 kubectl apply -f pod.yaml
