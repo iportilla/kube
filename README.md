@@ -168,6 +168,13 @@ To see the output of our application, run a curl request:
 
 `curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME:8080/proxy/`
 
+
+## Resources:
+
+https://minikube.sigs.k8s.io/docs/handbook/
+
+https://www.linuxtechi.com/how-to-install-minikube-on-ubuntu/
+
     
 ## License
 
