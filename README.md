@@ -123,7 +123,7 @@ The API server will automatically create an endpoint for each pod, based on the 
 
 First we need to get the Pod name, and we'll store in the environment variable POD_NAME:
 
-`export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+`export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')`
 
 echo Name of the Pod: 
 
