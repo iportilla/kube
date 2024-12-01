@@ -123,12 +123,15 @@ The API server will automatically create an endpoint for each pod, based on the 
 
 First we need to get the Pod name, and we'll store in the environment variable POD_NAME:
 
-`export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')`
+`export POD_NAME=$(kubectl get pods -o jsonpath='{.items[0].metadata.name}')`
 
 echo Name of the Pod: 
 
 `echo $POD_NAME`
 
+You will see:
+
+`hello-node-name-54d8dcfb6d-z4d44`
 
 You can access the Pod through the proxied API, by running:
 
