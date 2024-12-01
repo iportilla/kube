@@ -159,7 +159,11 @@ You can access the Pod through the proxied API, by running:
 
 `curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME:8080/proxy/`
 
-In order for the new Deployment to be accessible without using the proxy, a Service is required.
+You will see:
+
+`NOW: 2024-12-01 23:35:33.454714466 +0000 UTC m=+2527.554084907`
+
+*** In order for the new Deployment to be accessible without using the proxy, a Service is required.
 
 ## Deploy your own app
 
