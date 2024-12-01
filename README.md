@@ -96,10 +96,8 @@ The `kubectl create deployment` command fetches the hello image from the Docker 
 You will see something like:
 
 ```
-   	NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)          AGE
-	kubernetes            ClusterIP      10.96.0.1       <none>         443/TCP          20h
-	kubernetes-bootcamp   NodePort       10.97.168.128   <none>         8080:30345/TCP   116m
-	simpleapp             LoadBalancer   10.100.171.6    10.100.171.6   80:31458/TCP     160m
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   21m
  ```
 
 9. Great! Let's see the Pods running:
