@@ -201,10 +201,6 @@ simpleapp    LoadBalancer   10.105.115.60   <pending>     80:32524/TCP   20s
 
 `kubectl get pods`
 
-Next, to view what containers are inside that Pod and what images are used to build those containers we run the kubectl describe pods command:
-
-`kubectl describe pods`
-
 You will see:
 
 ```
@@ -213,6 +209,12 @@ hello-node-name-54d8dcfb6d-z4d44       1/1     Running        0          48m
 kubernetes-bootcamp-68cfbdbb99-tthtx   1/1     Running        0          48m
 myapp-pod                              0/1     ErrImagePull   0          114s
 ```
+
+Next, to view what containers are inside that Pod and what images are used to build those containers we run the kubectl describe pods command:
+
+`kubectl describe pods`
+
+
 
 
 ## Resources:
