@@ -56,7 +56,7 @@ Enjoy this topic!
 6. Change directory to the **kube** directory
 
 	`cd kube/`
-7. Test your `kube` installation by running the following command:
+7. Install `minikube` https://www.linuxtechi.com/how-to-install-minikube-on-ubuntu/ & Test your `kube` installation by running the following command:
 
 	`minikube status`
 	
