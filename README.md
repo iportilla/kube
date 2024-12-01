@@ -175,6 +175,8 @@ https://minikube.sigs.k8s.io/docs/handbook/
 
 https://www.linuxtechi.com/how-to-install-minikube-on-ubuntu/
 
+https://github.com/iportilla/kubernetes-101-workshop
+
     
 ## License
 
