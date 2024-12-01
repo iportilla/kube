@@ -109,9 +109,6 @@ You will see:
 ```
 NAME                                  READY   STATUS    RESTARTS        AGE
 hello-node-744769d864-jlphj           1/1     Running   0               82m
-kubernetes-bootcamp-f95c5b745-wfn8h   1/1     Running   0               3h20m
-myapp-pod                             1/1     Running   1 (3h33m ago)   4h2m
-nginx-55c8948b99-7tcpf                1/1     Running   0               3h28m
 ```
 
 10. Deploy your first app:
