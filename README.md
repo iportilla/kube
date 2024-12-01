@@ -205,14 +205,14 @@ Next, to view what containers are inside that Pod and what images are used to bu
 
 `kubectl describe pods`
 
-6.  Next, we'll get the Pod name and query that pod directly through the proxy. To get the Pod name and store it in the POD_NAME environment variable
+You will see:
 
-`export POD_NAME="$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')"
-echo Name of the Pod: $POD_NAME`
-
-To see the output of our application, run a curl request:
-
-`curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME:8080/proxy/`
+```
+NAME                                   READY   STATUS         RESTARTS   AGE
+hello-node-name-54d8dcfb6d-z4d44       1/1     Running        0          48m
+kubernetes-bootcamp-68cfbdbb99-tthtx   1/1     Running        0          48m
+myapp-pod                              0/1     ErrImagePull   0          114s
+```
 
 
 ## Resources:
