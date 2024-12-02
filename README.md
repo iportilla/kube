@@ -204,17 +204,32 @@ simpleapp    LoadBalancer   10.105.115.60   <pending>     80:32524/TCP   20s
 You will see:
 
 ```
-NAME                                   READY   STATUS         RESTARTS   AGE
-hello-node-name-54d8dcfb6d-z4d44       1/1     Running        0          48m
-kubernetes-bootcamp-68cfbdbb99-tthtx   1/1     Running        0          48m
-myapp-pod                              0/1     ErrImagePull   0          114s
+NAME                                   READY   STATUS    RESTARTS   AGE
+hello-node-name-54d8dcfb6d-z4d44       1/1     Running   0          15h
+kubernetes-bootcamp-68cfbdbb99-tthtx   1/1     Running   0          15h
+myapp-pod                              1/1     Running   0          97s
 ```
 
 Next, to view what containers are inside that Pod and what images are used to build those containers we run the kubectl describe pods command:
 
-`kubectl describe pods`
+`kubectl describe pod myapp-pod`
 
+You will see:
 
+```
+Name:             myapp-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             minikube/192.168.49.2
+Start Time:       Mon, 02 Dec 2024 14:18:04 +0000
+Labels:           app=myapp
+Annotations:      <none>
+Status:           Running
+IP:               10.244.0.6
+IPs:
+  IP:  10.244.0.6
+```
 
 
 ## Resources:
